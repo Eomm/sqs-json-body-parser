@@ -1,0 +1,46 @@
+{
+  "name": "sqs-json-body-parser",
+  "version": "0.0.1",
+  "description": "Middyjs middleware to parse your AWS SQS events",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "npm run lint && tap test/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eomm/sqs-json-body-parser.git"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "keywords": [
+    "lambda",
+    "middleware",
+    "serverless",
+    "Framework",
+    "AWS",
+    "AWS Lambda",
+    "middy",
+    "SQS",
+    "JSON",
+    "Body Parser",
+    "JSON Body Parser"
+  ],
+  "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eomm/sqs-json-body-parser/issues"
+  },
+  "homepage": "https://github.com/Eomm/sqs-json-body-parser#readme",
+  "devDependencies": {
+    "@middy/core": "^1.4.0",
+    "rfdc": "^1.1.4",
+    "standard": "^16.0.3",
+    "tap": "^14.11.0"
+  },
+  "dependencies": {
+    "secure-json-parse": "^2.1.0"
+  }
+}
