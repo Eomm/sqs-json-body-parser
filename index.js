@@ -14,14 +14,14 @@ module.exports = function sqsJsonBodyParser (options) {
 
   function before (handler, next) {
     if (!Array.isArray(handler.event.Records)) {
-      setImmediate(next)
+      process.nextTick(next)
       return
     }
 
     for (const message of handler.event.Records) {
       attachparsedBody(message)
     }
-    setImmediate(next)
+    process.nextTick(next)
   }
 
   function attachparsedBody (record) {
