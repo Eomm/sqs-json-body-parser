@@ -1,6 +1,6 @@
 {
   "name": "sqs-json-body-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Middyjs middleware to parse your AWS SQS events",
   "main": "index.js",
   "scripts": {
