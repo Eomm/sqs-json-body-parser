@@ -12,7 +12,7 @@ test('default usage', async t => {
 
   const records = await handler(getEvent(), {})
   t.equal(records.length, 2)
-  t.deepEqual(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }])
+  t.strictSame(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }])
 })
 
 test('it is not an SQS message', async t => {
@@ -30,7 +30,7 @@ test('custom field name', async t => {
 
   const records = await handler(getEvent(), {})
   t.equal(records.length, 2)
-  t.deepEqual(records.map(_ => _[name]), [{ test: 'foo1' }, { test: 'foo2' }])
+  t.strictSame(records.map(_ => _[name]), [{ test: 'foo1' }, { test: 'foo2' }])
 })
 
 test('secure parse', async t => {
@@ -48,7 +48,7 @@ test('secure parse', async t => {
 
   const records = await handler(event, {})
   t.equal(records.length, 3)
-  t.deepEqual(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, {}])
+  t.strictSame(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, {}])
 })
 
 test('secure parse ignore', async t => {
@@ -67,7 +67,7 @@ test('secure parse ignore', async t => {
 
   const records = await handler(event, {})
   t.equal(records.length, 3)
-  t.deepEqual(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, undefined])
+  t.strictSame(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, undefined])
 })
 
 test('secure parse throw', async t => {
@@ -85,7 +85,7 @@ test('secure parse throw', async t => {
 
   const records = await handler(event, {})
   t.equal(records.length, 3)
-  t.deepEqual(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, { __proto__: { b: 5 } }])
+  t.strictSame(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, { __proto__: { b: 5 } }])
 })
 
 test('throwOnFail true', async t => {
@@ -118,7 +118,7 @@ test('throwOnFail false', async t => {
   try {
     const records = await handler(event, {})
     t.equal(records.length, 3)
-    t.deepEqual(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, undefined])
+    t.strictSame(records.map(_ => _.jsonBody), [{ test: 'foo1' }, { test: 'foo2' }, undefined])
   } catch (error) {
     t.fail('should not throw')
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "standard",
     "lint:fix": "standard --fix",
-    "test": "npm run lint && tap test/**/*.test.js"
+    "test": "tap test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "JSON Body Parser"
   ],
   "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
+  "funding": "https://github.com/Eomm/sqs-json-body-parser?sponsor=1",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Eomm/sqs-json-body-parser/issues"
@@ -37,8 +38,8 @@
   "devDependencies": {
     "@middy/core": "^1.4.0",
     "rfdc": "^1.1.4",
-    "standard": "^16.0.3",
-    "tap": "^14.11.0"
+    "standard": "^17.0.0",
+    "tap": "^16.0.0"
   },
   "dependencies": {
     "secure-json-parse": "^2.1.0"
