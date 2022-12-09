@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/Eomm/sqs-json-body-parser#readme",
   "devDependencies": {
-    "@middy/core": "^1.4.0",
+    "@middy/core": "^4.0.3",
     "rfdc": "^1.1.4",
     "standard": "^17.0.0",
     "tap": "^16.0.0"
